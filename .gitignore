@@ -9,6 +9,8 @@ vinv/
 vinv
 .env
 db.sqlite3
+images/
+images
 
 # Backup files # 
 *.bak 
