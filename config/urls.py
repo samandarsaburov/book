@@ -21,10 +21,10 @@ from django.conf.urls.i18n import i18n_patterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/',include('account.urls')),
-    path('auther/',include('auther.urls')),
 ]
 
 urlpatterns += i18n_patterns(
     path('book/',include('book.urls')),
+    path('auther/',include('auther.urls')),
     
 )
