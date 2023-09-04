@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'auther',
     'book',
     'account',
@@ -45,7 +46,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 AUTH_USER_MODEL = 'account.CustomUser'
+
+
 MIDDLEWARE = [
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -113,15 +117,22 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'uz'
 
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
-
+USE_I10N = True
 USE_TZ = True
 
+LANGUAGES = (
+    ('uz',('uzbek')),
+    ('en',('english')),
+    ('ru',('russian'))
+)
 
+MODELTRANSLATIONS_DEFAULT_LANGUAGE = 'uz'
+MODELTRANSLATIONS_REGISTRY = 'book.translation'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
